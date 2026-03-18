@@ -1,10 +1,80 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <title>マイウェブサイト</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>aoao works | Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://d3js.org/d3.v7.min.js" defer></script>
+  <script src="main.js" defer></script>
 </head>
 <body>
-    <h1>こんにちは！私のサイトへようこそ。</h1>
+  <header>
+    <div class="logo-text">aoao works</div>
+    <nav>
+      <a href="#works">Works</a>
+      <a href="#analytics">Analytics</a>
+      <a href="#about">About</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="hero">
+      <div class="hero-content">
+        <h1>aoao works</h1>
+        <p>Data Science & Engineering</p>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-logo-grid">
+          <div class="hero-logo-block block-1"></div><div class="hero-logo-block block-2"></div><div class="hero-logo-block block-3"></div>
+          <div class="hero-logo-block block-4"></div><div class="hero-logo-block block-5"></div><div class="hero-logo-block block-6"></div>
+          <div class="hero-logo-block block-7"></div><div class="hero-logo-block block-8"></div><div class="hero-logo-block block-9"></div>
+          <div class="hero-logo-block empty"></div><div class="hero-logo-block block-10"></div><div class="hero-logo-block empty"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="works">
+      <h2><span class="accent-line"></span>Works</h2>
+      <div class="grid-container">
+        <a href="/pdf-booklet" class="card">
+          <h3>PDF Booklet</h3>
+          <p>ドキュメント管理・閲覧ツール</p>
+          <span class="link-text">View Project &rarr;</span>
+        </a>
+        <a href="/chuinfo" class="card">
+          <h3>Chuinfo</h3>
+          <p>大学生活サポートアプリケーション</p>
+          <span class="link-text">View Project &rarr;</span>
+        </a>
+        <a href="/debate-sns" class="card">
+          <h3>Debate SNS</h3>
+          <p>議論に特化したSNSプラットフォーム</p>
+          <span class="link-text">View Project &rarr;</span>
+        </a>
+      </div>
+    </section>
+
+    <section id="analytics">
+      <h2><span class="accent-line"></span>Analytics</h2>
+      <div id="d3-container" class="dashboard">
+        <p class="placeholder-text">Loading Data Visualization...</p>
+      </div>
+    </section>
+
+    <section id="about">
+      <h2><span class="accent-line"></span>About & Vision</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <h3>Current</h3>
+          <p>統計検定1級の取得に向けた学習と、データ解析の手法を深める日々。</p>
+        </div>
+        <div class="timeline-item">
+          <h3>Future Goal</h3>
+          <p>スタンフォード大学などの海外大学院への進学を見据え、グローバルな環境での研究開発を目指す。</p>
+        </div>
+      </div>
+    </section>
+  </main>
 </body>
 </html>

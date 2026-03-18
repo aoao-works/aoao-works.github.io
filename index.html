@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>aoao works | Portfolio</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <script src="https://d3js.org/d3.v7.min.js" defer></script>
   <script src="main.js" defer></script>
 </head>
@@ -39,17 +40,12 @@
       <div class="grid-container">
         <a href="/pdf-booklet" class="card">
           <h3>PDF Booklet</h3>
-          <p>ドキュメント管理・閲覧ツール</p>
+          <p>PDFを冊子形式に変換するツール</p>
           <span class="link-text">View Project &rarr;</span>
         </a>
         <a href="/chuinfo" class="card">
           <h3>Chuinfo</h3>
           <p>大学生活サポートアプリケーション</p>
-          <span class="link-text">View Project &rarr;</span>
-        </a>
-        <a href="/debate-sns" class="card">
-          <h3>Debate SNS</h3>
-          <p>議論に特化したSNSプラットフォーム</p>
           <span class="link-text">View Project &rarr;</span>
         </a>
       </div>
@@ -62,16 +58,75 @@
       </div>
     </section>
 
+    <section id="links">
+      <h2><span class="accent-line"></span>Links & Contact</h2>
+      <div class="links-wrapper">
+        <a href="https://note.com/aoao_works" target="_blank" class="note-featured-card note">
+          <div class="card-icon">
+            <img src="note-logo.png" alt="note" class="official-logo">
+          </div>
+          <div class="card-content">
+            <div class="note-label">note</div>
+            <h3>開発した作品の紹介や技術的な学びを発信中</h3>
+            <p>統計やアプリ開発などをブログ形式でまとめています。</p>
+            <span class="read-more">記事一覧を読む &rarr;</span>
+          </div>
+        </a>
+        
+        <div class="social-grid">
+          <a href="https://github.com/aoao-works" target="_blank" class="social-btn github">
+            <div class="btn-icon"><i class="fa-brands fa-github"></i></div>
+            <div class="btn-text">
+              <span class="social-name">GitHub</span>
+              <span class="social-desc">@aoao-works</span>
+            </div>
+          </a>
+          <a href="https://qiita.com/aoao_works" target="_blank" class="social-btn qiita">
+            <div class="btn-icon">
+              <img src="qiita-logo.png" alt="Qiita" class="official-logo">
+            </div>
+            <div class="btn-text">
+              <span class="social-name">Qiita</span>
+              <span class="social-desc">@aoao_works</span>
+            </div>
+          </a>
+          <a href="https://x.com/aoao_works" target="_blank" class="social-btn x">
+            <div class="btn-icon"><i class="fa-brands fa-x-twitter"></i></div>
+            <div class="btn-text">
+              <span class="social-name">X</span>
+              <span class="social-desc">@aoao_works</span>
+            </div>
+          </a>
+          <a href="mailto:aoao.works@gmail.com" class="social-btn email">
+            <div class="btn-icon"><i class="fa-solid fa-envelope"></i></div>
+            <div class="btn-text">
+              <span class="social-name">Email</span>
+              <span class="social-desc">aoao.works@gmail.com</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
     <section id="about">
       <h2><span class="accent-line"></span>About & Vision</h2>
-      <div class="timeline">
-        <div class="timeline-item">
-          <h3>Current</h3>
-          <p>統計検定1級の取得に向けた学習と、データ解析の手法を深める日々。</p>
+      <div class="about-container">
+        <div class="profile-header">
+          <h3>aoao works</h3>
+          <span class="brand-tag">Data Science / App Dev</span>
         </div>
-        <div class="timeline-item">
-          <h3>Future Goal</h3>
-          <p>スタンフォード大学などの海外大学院への進学を見据え、グローバルな環境での研究開発を目指す。</p>
+        <div class="profile-body">
+          <p>
+            データサイエンスとソフトウェアエンジニアリングを専攻する大学生による開発スタジオ。<br>
+            大学生活サポートアプリ「Chuinfo」やディベート特化型SNSなど、課題解決に向けたアプリケーションの個人開発を行っている。
+          </p>
+          <p>
+            現在はデータ解析の基盤を固めるため、統計検定1級の取得に向けて数理統計を学習中。アプリ開発に限らず、簿記の知識を活かしたデータ分析や、ボーカロイドを用いた音楽制作など、多様な領域にアプローチしている。
+          </p>
+          <p class="vision-text">
+            <strong>Future Goal:</strong><br>
+            大学院へ進学し、グローバルな環境でデータサイエンスの研究開発に挑むこと。
+          </p>
         </div>
       </div>
     </section>

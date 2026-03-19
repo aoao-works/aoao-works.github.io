@@ -28,6 +28,7 @@
     <nav>
       <a href="#works">Works</a>
       <a href="#analytics">Analytics</a>
+      <a href="#links">Links</a>
       <a href="#about">About</a>
     </nav>
   </header>
@@ -59,23 +60,45 @@
     <section id="works">
       <h2><span class="accent-line"></span>Works</h2>
       <div class="grid-container">
-        <a href="/pdf-booklet" class="card">
+        
+        <div class="card work-item" 
+             data-title="PDF Booklet" 
+             data-desc="PDFを冊子形式に変換するツールです。両面印刷用にページの並び替えを自動で行います。"
+             data-article="https://note.com/aoao_works/n/n504597163bd7" 
+             data-app="https://aoao-works.github.io/pdf-booklet/">
           <h3>PDF Booklet</h3>
           <p>PDFを冊子形式に変換するツール</p>
-          <span class="link-text">View Project &rarr;</span>
-        </a>
-        <a href="/chuinfo" class="card">
-          <h3>Chuinfo</h3>
-          <p>大学生活サポートアプリケーション</p>
-          <span class="link-text">View Project &rarr;</span>
-        </a>
+          <span class="link-text">詳細を見る &rarr;</span>
+        </div>
+
+        <div class="card work-item" 
+             data-title="debight" 
+             data-desc="大学生のためのディベート特化型SNS。議論の場を提供し、ユーザー同士が意見交換や情報共有を行えるプラットフォームです。"
+             data-app="https://debight.com">
+          <h3>debight</h3>
+          <p>ディベート特化型SNS</p>
+          <span class="link-text">詳細を見る &rarr;</span>
+        </div>
+        
       </div>
     </section>
 
     <section id="analytics">
       <h2><span class="accent-line"></span>Analytics</h2>
-      <div id="d3-container" class="dashboard">
-        <p class="placeholder-text">Loading Data Visualization...</p>
+      <div class="analytics-grid">
+        <div class="analytics-card">
+          <h3>GitHub Contributions</h3>
+          <div class="grass-container">
+            <img src="https://ghchart.rshah.org/004466/aoao-works" alt="GitHub Contributions">
+          </div>
+        </div>
+        
+        <div class="analytics-card">
+          <h3>Top Languages</h3>
+          <div class="stats-container">
+            <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=aoao-works&layout=compact&hide_border=true&title_color=004466" alt="Top Languages">
+          </div>
+        </div>
       </div>
     </section>
 
@@ -138,11 +161,11 @@
         </div>
         <div class="profile-body">
           <p>
-            データサイエンスとソフトウェアエンジニアリングを専攻する大学生による開発スタジオ。<br>
-            大学生活サポートアプリ「Chuinfo」やディベート特化型SNSなど、課題解決に向けたアプリケーションの個人開発を行っている。
+            データサイエンスとエンジニアリングを専攻する大学生「aoao works」<br>
+            pdf-bookletや大学生活サポートアプリ「Chuinfo」、ディベート特化型SNS「debight」など、課題解決に向けたアプリケーションの個人開発を行っている。これまでの開発経験を通じて、ユーザーのニーズを捉えたプロダクト設計と実装に注力してきた。
           </p>
           <p>
-            現在はデータ解析の基盤を固めるため、統計検定1級の取得に向けて数理統計を学習中。アプリ開発に限らず、簿記の知識を活かしたデータ分析や、ボーカロイドを用いた音楽制作など、多様な領域にアプローチしている。
+            現在はデータ解析の基盤を固めるため、統計検定1級の取得に向けて統計学を学習中。アプリ開発に限らず、簿記の知識を活かしたデータ分析や音楽制作など、多様な領域にアプローチしている。
           </p>
           <p class="vision-text">
             <strong>Future Goal:</strong><br>
@@ -152,6 +175,19 @@
       </div>
     </section>
   </main>
+
+  <div id="work-modal" class="modal-overlay hidden">
+    <div class="modal-content">
+      <button id="modal-close" class="modal-close-btn">&times;</button>
+      <h3 id="modal-title">タイトル</h3>
+      <p id="modal-desc">説明文がここに入ります。</p>
+      <div class="modal-actions">
+        <a id="modal-article-link" href="#" target="_blank" class="btn btn-outline">紹介記事を読む</a>
+        <a id="modal-app-link" href="#" target="_blank" class="btn btn-primary">制作物を見る</a>
+      </div>
+    </div>
+  </div>
+
 </body>
 
 </html>

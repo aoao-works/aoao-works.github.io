@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   initIntroAnimation();
-  initDataViz();
+  initWorkModals();
 });
 
 function initIntroAnimation() {
@@ -40,10 +40,48 @@ function initIntroAnimation() {
     setTimeout(() => {
       overlay.remove();
     }, 800);
-  }, 2200);
+  }, 1000);
 }
 
-function initDataViz() {
-  const container = document.getElementById('d3-container');
-  console.log('D3.js initialized');
+function initWorkModals() {
+  const works = document.querySelectorAll('.work-item');
+  const modal = document.getElementById('work-modal');
+  const closeBtn = document.getElementById('modal-close');
+  const titleEl = document.getElementById('modal-title');
+  const descEl = document.getElementById('modal-desc');
+  const articleLink = document.getElementById('modal-article-link');
+  const appLink = document.getElementById('modal-app-link');
+
+  works.forEach(work => {
+    work.addEventListener('click', () => {
+      // HTMLのdata属性から情報を取得してモーダルにセット
+      titleEl.textContent = work.dataset.title;
+      descEl.textContent = work.dataset.desc;
+      
+      // 記事URLがある場合のみボタンを表示
+      if(work.dataset.article) {
+        articleLink.href = work.dataset.article;
+        articleLink.style.display = "block";
+      } else {
+        articleLink.style.display = "none";
+      }
+      
+      appLink.href = work.dataset.app;
+      
+      // モーダルを表示
+      modal.classList.remove('hidden');
+    });
+  });
+
+  // バツボタンで閉じる
+  closeBtn.addEventListener('click', () => {
+    modal.classList.add('hidden');
+  });
+
+  // モーダルの背景クリックで閉じる
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.classList.add('hidden');
+    }
+  });
 }

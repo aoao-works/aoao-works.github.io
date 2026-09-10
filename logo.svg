@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 300" role="img" aria-label="aoao works">
+  <style>
+    rect { fill: #004466; }
+    @media (prefers-color-scheme: dark) { rect { fill: #ffffff; } }
+  </style>
+  <rect x="0"   y="0"   width="60" height="60" rx="6"/>
+  <rect x="80"  y="0"   width="60" height="60" rx="6"/>
+  <rect x="160" y="0"   width="60" height="60" rx="6"/>
+  <rect x="0"   y="80"  width="60" height="60" rx="6"/>
+  <rect x="80"  y="80"  width="60" height="60" rx="6"/>
+  <rect x="160" y="80"  width="60" height="60" rx="6"/>
+  <rect x="0"   y="160" width="60" height="60" rx="6"/>
+  <rect x="80"  y="160" width="60" height="60" rx="6"/>
+  <rect x="160" y="160" width="60" height="60" rx="6"/>
+  <rect x="80"  y="240" width="60" height="60" rx="6"/>
+</svg>

@@ -4,189 +4,151 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>aoao works | Portfolio</title>
+  <title>aoao works</title>
+  <meta name="description" content="データサイエンスとエンジニアリングを専攻する大学生「aoao works」のポートフォリオ。">
 
   <meta property="og:url" content="https://aoao-works.github.io/">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="aoao works | Portfolio">
-  <meta property="og:description" content="データサイエンスとエンジニアリングを専攻する大学生「aoao works」のポートフォリオサイトです。">
+  <meta property="og:title" content="aoao works">
+  <meta property="og:description" content="データサイエンスとエンジニアリングを専攻する大学生「aoao works」のポートフォリオ。">
   <meta property="og:site_name" content="aoao works">
   <meta property="og:image" content="https://aoao-works.github.io/ogp-image.png">
-
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@aoao_works">
 
+  <link rel="icon" href="logo.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Mono:wght@400;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <script src="https://d3js.org/d3.v7.min.js" defer></script>
   <script src="main.js" defer></script>
 </head>
 
 <body>
+  <svg width="0" height="0" class="svg-defs" aria-hidden="true" focusable="false">
+    <!-- aoao works シンボルマーク（小サイズ版 / 要件定義 §8.2）: m=6, g=m/3=2, r=m/10=0.6 -->
+    <symbol id="logo-mark" viewBox="0 0 22 30">
+      <rect x="0"  y="0"  width="6" height="6" rx="0.6"/>
+      <rect x="8"  y="0"  width="6" height="6" rx="0.6"/>
+      <rect x="16" y="0"  width="6" height="6" rx="0.6"/>
+      <rect x="0"  y="8"  width="6" height="6" rx="0.6"/>
+      <rect x="8"  y="8"  width="6" height="6" rx="0.6"/>
+      <rect x="16" y="8"  width="6" height="6" rx="0.6"/>
+      <rect x="0"  y="16" width="6" height="6" rx="0.6"/>
+      <rect x="8"  y="16" width="6" height="6" rx="0.6"/>
+      <rect x="16" y="16" width="6" height="6" rx="0.6"/>
+      <rect x="8"  y="24" width="6" height="6" rx="0.6"/>
+    </symbol>
+  </svg>
+
   <header>
-    <div class="logo-text">aoao works</div>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#works">Works</a>
-      <a href="#analytics">Analytics</a>
-      <a href="#links">Links</a>
+    <a href="#top" class="logo-text">
+      <svg class="logo-mark" viewBox="0 0 22 30" aria-hidden="true"><use href="#logo-mark"/></svg>
+      <span>aoao&nbsp;works</span>
+    </a>
+    <nav class="icon-nav" aria-label="リンク">
+      <a href="https://github.com/aoao-works" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+      <a href="https://qiita.com/aoao_works" target="_blank" rel="noopener" aria-label="Qiita"><svg class="qiita-mark" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="17" stroke-linecap="round" stroke-dasharray="194 257" transform="rotate(70 50 50)"/><path transform="translate(-7 -9) scale(1.14)" d="M50 71 C39 71 31 62 31 52 C31 47 32 43 34 39 L37 26 L47.5 38.5 C48.5 38 51.5 38 52.5 38.5 L63 26 L66 39 C68 43 69 47 69 52 C69 62 61 71 50 71 Z" fill="currentColor"/></svg></a>
+      <a href="https://note.com/aoao_works" target="_blank" rel="noopener" aria-label="note"><svg class="note-n" viewBox="0 0 95 100" aria-hidden="true"><path d="M8 15 H54 C70 15 83 27 83 43 V88 H60 V50 C60 42 55 38 47 38 H31 V88 H8 Z"/></svg></a>
+      <a href="https://x.com/aoao_works" target="_blank" rel="noopener" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+      <a href="mailto:aoao.works@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
     </nav>
+    <button id="theme-toggle" type="button" aria-label="テーマを切り替える">
+      <i class="fa-solid fa-circle-half-stroke"></i>
+    </button>
   </header>
 
-  <main>
+  <main id="top">
     <section id="hero">
-      <div class="hero-content">
+      <div class="hero-text">
         <h1>aoao works</h1>
-        <p>Data Science & Engineering</p>
+        <p class="tagline">Data Science &amp; Engineering</p>
+        <p class="hero-lead">
+          データサイエンスとエンジニアリングを専攻する大学生。
+          課題解決のためのアプリケーションを個人開発しながら、統計学とデータ分析を学んでいます。
+        </p>
       </div>
       <div class="hero-visual">
-        <div class="hero-logo-grid">
-          <div class="hero-logo-block block-1"></div>
-          <div class="hero-logo-block block-2"></div>
-          <div class="hero-logo-block block-3"></div>
-          <div class="hero-logo-block block-4"></div>
-          <div class="hero-logo-block block-5"></div>
-          <div class="hero-logo-block block-6"></div>
-          <div class="hero-logo-block block-7"></div>
-          <div class="hero-logo-block block-8"></div>
-          <div class="hero-logo-block block-9"></div>
-          <div class="hero-logo-block empty"></div>
-          <div class="hero-logo-block block-10"></div>
-          <div class="hero-logo-block empty"></div>
+        <div class="logo-float">
+          <div class="logo-toy" id="logo-toy">
+            <button type="button" class="blk" aria-label="ブロックを消す"></button>
+            <button type="button" class="blk" aria-label="ブロックを消す"></button>
+            <button type="button" class="blk" aria-label="ブロックを消す"></button>
+            <button type="button" class="blk" aria-label="ブロックを消す"></button>
+            <button type="button" class="blk" aria-label="ブロックを消す"></button>
+            <button type="button" class="blk" aria-label="ブロックを消す"></button>
+            <button type="button" class="blk" aria-label="ブロックを消す"></button>
+            <button type="button" class="blk" aria-label="ブロックを消す"></button>
+            <button type="button" class="blk" aria-label="ブロックを消す"></button>
+            <button type="button" class="blk blk-tail" aria-label="ブロックを消す"></button>
+          </div>
         </div>
       </div>
     </section>
 
     <section id="about">
-      <h2><span class="accent-line"></span>About & Vision</h2>
-      <div class="about-container">
-        <div class="profile-header">
-          <h3>aoao works</h3>
-          <span class="brand-tag">Data Science / App Dev</span>
-        </div>
-        <div class="profile-body">
-          <p>
-            データサイエンスとエンジニアリングを専攻する大学生「aoao works」<br>
-            pdf-bookletや大学生活サポートアプリ「Chuinfo」、ディベート特化型SNS「debight」など、課題解決に向けたアプリケーションの個人開発を行っている。これまでの開発経験を通じて、ユーザーのニーズを捉えたプロダクト設計と実装に注力してきた。
-          </p>
-          <p>
-            現在はデータ解析の基盤を固めるため、統計検定1級の取得に向けて統計学を学習中。アプリ開発に限らず、簿記の知識を活かしたデータ分析や音楽制作など、多様な領域にアプローチしている。
-          </p>
-          <p class="vision-text">
-            <strong>Future Goal:</strong><br>
-            グローバルな環境でデータサイエンスの研究開発に挑むこと。
-          </p>
-        </div>
+      <h2><span class="section-index">00</span> / About</h2>
+      <div class="prose">
+        <p>
+          pdf-bookletや大学生活サポートアプリ「Chuinfo」、ディベート特化型SNS「debight」など、
+          課題解決に向けたアプリケーションの個人開発を行っています。これまでの開発経験を通じて、
+          ユーザーのニーズを捉えたプロダクト設計と実装に注力してきました。
+        </p>
+        <p>
+          現在はデータ解析の基盤を固めるため、統計検定1級の取得に向けて統計学を学習中。
+          アプリ開発に限らず、簿記の知識を活かしたデータ分析や音楽制作など、多様な領域にアプローチしています。
+        </p>
+        <p>
+          <span class="label">Future goal</span>
+          グローバルな環境でデータサイエンスの研究開発に挑むこと。
+        </p>
       </div>
     </section>
 
     <section id="works">
-      <h2><span class="accent-line"></span>Works</h2>
-      <div class="grid-container">
-        
-        <div class="card work-item" 
-             data-title="PDF Booklet" 
-             data-desc="PDFを冊子形式に変換するツールです。両面印刷用にページの並び替えを自動で行います。"
-             data-article="https://note.com/aoao_works/n/n504597163bd7" 
-             data-app="https://aoao-works.github.io/pdf-booklet/">
-          <h3>PDF Booklet</h3>
-          <p>PDFを冊子形式に変換するツール</p>
-          <span class="link-text">詳細を見る &rarr;</span>
-        </div>
-
-        <div class="card work-item" 
-             data-title="debight" 
-             data-desc="大学生のためのディベート特化型SNS。議論の場を提供し、ユーザー同士が意見交換や情報共有を行えるプラットフォームです。"
-             data-app="https://debight.com">
-          <h3>debight</h3>
-          <p>ディベート特化型SNS</p>
-          <span class="link-text">詳細を見る &rarr;</span>
-        </div>
-        
-      </div>
+      <h2><span class="section-index">01</span> / Works</h2>
+      <ul class="entry-list">
+        <li class="entry">
+          <div class="entry-head">
+            <h3>PDF Booklet</h3>
+            <span class="entry-meta">Web tool</span>
+          </div>
+          <p>PDFを冊子形式に変換するツール。両面印刷用にページの並び替えを自動で行います。</p>
+          <p class="entry-links">
+            <a href="https://aoao-works.github.io/pdf-booklet/" target="_blank" rel="noopener">サイトを見る</a>
+            <a href="https://note.com/aoao_works/n/n504597163bd7" target="_blank" rel="noopener">紹介記事</a>
+          </p>
+        </li>
+        <li class="entry">
+          <div class="entry-head">
+            <h3>debight</h3>
+            <span class="entry-meta">SNS</span>
+          </div>
+          <p>大学生のためのディベート特化型SNS。議論の場を提供し、ユーザー同士が意見交換や情報共有を行えるプラットフォームです。</p>
+          <p class="entry-links">
+            <a href="https://debight.com" target="_blank" rel="noopener">サイトを見る</a>
+          </p>
+        </li>
+      </ul>
     </section>
 
-    <section id="analytics">
-      <h2><span class="accent-line"></span>Analytics</h2>
-      <div class="analytics-grid">
-        <div class="analytics-card">
-          <h3>GitHub Contributions</h3>
-          <div class="grass-container">
-            <img src="https://ghchart.rshah.org/004466/aoao-works" alt="GitHub Contributions">
-          </div>
-        </div>
-        
-        <div class="analytics-card">
-          <h3>Top Languages</h3>
-          <div class="stats-container">
-            <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=aoao-works&layout=compact&hide_border=true&title_color=004466" alt="Top Languages">
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="links">
-      <h2><span class="accent-line"></span>Links & Contact</h2>
-      <div class="links-wrapper">
-        <a href="https://note.com/aoao_works" target="_blank" class="note-featured-card note">
-          <div class="card-icon">
-            <img src="note-logo.png" alt="note" class="official-logo">
-          </div>
-          <div class="card-content">
-            <div class="note-label">note</div>
-            <h3>開発した作品の紹介や技術的な学びを発信中</h3>
-            <p>統計やアプリ開発などをブログ形式でまとめています。</p>
-            <span class="read-more">記事一覧を読む &rarr;</span>
-          </div>
-        </a>
-
-        <div class="social-grid">
-          <a href="https://github.com/aoao-works" target="_blank" class="social-btn github">
-            <div class="btn-icon"><i class="fa-brands fa-github"></i></div>
-            <div class="btn-text">
-              <span class="social-name">GitHub</span>
-              <span class="social-desc">@aoao-works</span>
-            </div>
-          </a>
-          <a href="https://qiita.com/aoao_works" target="_blank" class="social-btn qiita">
-            <div class="btn-icon">
-              <img src="qiita-logo.png" alt="Qiita" class="official-logo">
-            </div>
-            <div class="btn-text">
-              <span class="social-name">Qiita</span>
-              <span class="social-desc">@aoao_works</span>
-            </div>
-          </a>
-          <a href="https://x.com/aoao_works" target="_blank" class="social-btn x">
-            <div class="btn-icon"><i class="fa-brands fa-x-twitter"></i></div>
-            <div class="btn-text">
-              <span class="social-name">X</span>
-              <span class="social-desc">@aoao_works</span>
-            </div>
-          </a>
-          <a href="mailto:aoao.works@gmail.com" class="social-btn email">
-            <div class="btn-icon"><i class="fa-solid fa-envelope"></i></div>
-            <div class="btn-text">
-              <span class="social-name">Email</span>
-              <span class="social-desc">aoao.works@gmail.com</span>
-            </div>
-          </a>
-        </div>
+    <section id="writing">
+      <h2><span class="section-index">02</span> / Writing</h2>
+      <div class="prose">
+        <p>
+          開発した作品の紹介や、統計・アプリ開発を通じた技術的な学びを note で発信しています。
+        </p>
+        <p class="entry-links">
+          <a href="https://note.com/aoao_works" target="_blank" rel="noopener">note の記事一覧</a>
+        </p>
       </div>
     </section>
   </main>
 
-  <div id="work-modal" class="modal-overlay hidden">
-    <div class="modal-content">
-      <button id="modal-close" class="modal-close-btn">&times;</button>
-      <h3 id="modal-title">タイトル</h3>
-      <p id="modal-desc">説明文がここに入ります。</p>
-      <div class="modal-actions">
-        <a id="modal-article-link" href="#" target="_blank" class="btn btn-outline">紹介記事を読む</a>
-        <a id="modal-app-link" href="#" target="_blank" class="btn btn-primary">制作物を見る</a>
-      </div>
-    </div>
-  </div>
+  <footer>
+    <p>&copy; <span id="year">2026</span> aoao works</p>
+  </footer>
 
 </body>
 

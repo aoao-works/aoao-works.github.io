@@ -1,7 +1,36 @@
 document.addEventListener('DOMContentLoaded', () => {
   initIntroAnimation();
   initWorkModals();
+  loadArticles();
+  initHeroParallax();
 });
+
+// スクロールに応じてヒーローのアイコンが下に移動しながらフェードアウトしていく演出
+function initHeroParallax() {
+  const hero = document.getElementById('hero');
+  const visual = document.querySelector('.hero-visual');
+  if (!hero || !visual) return;
+
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  let ticking = false;
+
+  function update() {
+    const progress = Math.min(window.scrollY / hero.offsetHeight, 1);
+    visual.style.transform = `translateY(${progress * 160}px)`;
+    visual.style.opacity = String(1 - progress * 0.85);
+    ticking = false;
+  }
+
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      requestAnimationFrame(update);
+      ticking = true;
+    }
+  }, { passive: true });
+
+  update();
+}
 
 function initIntroAnimation() {
   const overlay = document.createElement('div');
@@ -84,4 +113,43 @@ function initWorkModals() {
       modal.classList.add('hidden');
     }
   });
+}
+
+// note の最新記事を articles.json (GitHub Actionsが定期更新) から読み込んで表示する。
+// HTMLには最新記事を静的にも書いてあるので、fetchが失敗しても(file://で開いた場合など)
+// 記事一覧が空になったりエラー表示になったりしない — 取得できたときだけ最新化する。
+async function loadArticles() {
+  const grid = document.getElementById('articles-grid');
+  if (!grid) return;
+
+  try {
+    const res = await fetch('articles.json', { cache: 'no-cache' });
+    if (!res.ok) throw new Error('articles.json not found');
+    const articles = await res.json();
+
+    if (!Array.isArray(articles) || articles.length === 0) {
+      throw new Error('no articles');
+    }
+
+    grid.innerHTML = '';
+    articles.slice(0, 3).forEach(article => {
+      const card = document.createElement('a');
+      card.className = 'article-card';
+      card.href = article.link;
+      card.target = '_blank';
+      card.rel = 'noopener';
+
+      card.innerHTML = `
+        <div class="a-thumb"><img src="" alt="" loading="lazy"></div>
+        <h3 class="a-title"></h3>
+      `;
+      card.querySelector('.a-thumb img').src = article.thumbnail || '';
+      card.querySelector('.a-title').textContent = article.title || '';
+
+      grid.appendChild(card);
+    });
+  } catch (err) {
+    // fetchに失敗しても、HTMLに書かれている静的な記事カードをそのまま残す
+    console.warn('articles.json を取得できなかったため、静的な記事一覧を表示しています。', err);
+  }
 }

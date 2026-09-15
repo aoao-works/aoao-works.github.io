@@ -16,11 +16,12 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@aoao_works">
 
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Noto+Sans+JP:wght@400;500;700;900&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;900&display=swap">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <script src="https://d3js.org/d3.v7.min.js" defer></script>
   <script src="main.js" defer></script>
+  <noscript><style>.reveal, .accent-marks span, .bars-reveal .u { opacity: 1 !important; transform: none !important; }</style></noscript>
 </head>
 
 <body>
@@ -32,7 +33,6 @@
       <a href="#skills">Skills</a>
       <a href="#timeline">Timeline</a>
       <a href="#articles">Articles</a>
-      <a href="#analytics">Analytics</a>
       <a href="#links">Links</a>
     </nav>
   </header>
@@ -58,7 +58,7 @@
         </div>
       </div>
       <div class="hero-visual">
-        <div class="hero-logo-grid">
+        <div class="hero-logo-grid" id="hero-logo">
           <div class="hero-logo-block block-1"></div>
           <div class="hero-logo-block block-2"></div>
           <div class="hero-logo-block block-3"></div>
@@ -88,12 +88,12 @@
         <div class="bg-sq accent" style="top:12%; left:48%; width:14px; height:14px; opacity:.18;"></div>
         <div class="bg-sq accent" style="top:80%; left:58%; width:12px; height:12px; opacity:.16;"></div>
       </div>
-      <h2><span class="accent-line"></span>About &amp; Philosophy</h2>
-      <div class="philosophy-quote">
+      <h2><span class="accent-marks"><span></span><span></span><span></span><span></span></span>About &amp; Philosophy</h2>
+      <div class="philosophy-quote reveal">
         <p class="quote-main">「行動<span class="hl">あるのみ</span>。」</p>
         <div class="mini-divider"><div></div><div></div><div></div><div></div><div></div></div>
       </div>
-      <div class="about-container">
+      <div class="about-container reveal">
         <div class="profile-header">
           <h3>aoao works</h3>
           <span class="brand-tag">Data Science / App Dev</span>
@@ -122,11 +122,11 @@
         <div class="bg-sq" style="top:70%; left:96%; width:14px; height:14px; opacity:.07; --r:-6deg; animation-duration:6.5s;"></div>
         <div class="bg-sq accent" style="top:45%; left:2%; width:12px; height:12px; opacity:.14; --r:10deg; animation-duration:7.5s;"></div>
       </div>
-      <h2><span class="accent-line"></span>Works</h2>
+      <h2><span class="accent-marks"><span></span><span></span><span></span><span></span></span>Works</h2>
       <div class="grid-container">
         
-        <div class="card work-item" 
-             data-title="PDF Booklet" 
+        <div class="card work-item reveal"
+             data-title="PDF Booklet"
              data-desc="PDFを冊子形式に変換するツールです。両面印刷用にページの並び替えを自動で行います。"
              data-article="https://note.com/aoao_works/n/n504597163bd7" 
              data-app="https://aoao-works.github.io/pdf-booklet/">
@@ -135,8 +135,8 @@
           <span class="link-text">詳細を見る &rarr;</span>
         </div>
 
-        <div class="card work-item" 
-             data-title="debight" 
+        <div class="card work-item reveal"
+             data-title="debight"
              data-desc="大学生のためのディベート特化型SNS。議論の場を提供し、ユーザー同士が意見交換や情報共有を行えるプラットフォームです。"
              data-app="https://debight.com">
           <h3>debight</h3>
@@ -154,9 +154,9 @@
         <div class="bg-sq" style="top:88%; left:8%; width:12px; height:12px; opacity:.06; --r:6deg; animation-duration:6.5s;"></div>
         <div class="bg-sq accent" style="top:15%; left:92%; width:12px; height:12px; opacity:.15; --r:-12deg; animation-duration:7.5s;"></div>
       </div>
-      <h2><span class="accent-line"></span>Skills
+      <h2><span class="accent-marks"><span></span><span></span><span></span><span></span></span>Skills
         <div class="spacer"></div>
-        <div class="data-mark">
+        <div class="data-mark bars-reveal">
           <div class="u" style="height:14px;"></div>
           <div class="u" style="height:26px;"></div>
           <div class="u accent" style="height:46px;"></div>
@@ -165,13 +165,13 @@
         </div>
       </h2>
       <div class="badges">
-        <div class="badge"><div class="mini"><div></div><div></div><div></div><div></div></div>Python</div>
-        <div class="badge"><div class="mini"><div></div><div></div><div></div><div></div></div>SQL / 統計解析</div>
-        <div class="badge"><div class="mini"><div></div><div></div><div></div><div></div></div>JavaScript / TypeScript</div>
-        <div class="badge"><div class="mini"><div></div><div></div><div></div><div></div></div>React</div>
-        <div class="badge"><div class="mini"><div class="accent"></div><div></div><div></div><div class="accent"></div></div>Git / GitHub</div>
-        <div class="badge"><div class="mini"><div></div><div></div><div></div><div></div></div>Figma</div>
-        <div class="badge"><div class="mini"><div></div><div></div><div></div><div></div></div>簿記</div>
+        <div class="badge reveal"><div class="mini"><div></div><div></div><div></div><div></div></div>Python</div>
+        <div class="badge reveal"><div class="mini"><div></div><div></div><div></div><div></div></div>SQL / 統計解析</div>
+        <div class="badge reveal"><div class="mini"><div></div><div></div><div></div><div></div></div>JavaScript / TypeScript</div>
+        <div class="badge reveal"><div class="mini"><div></div><div></div><div></div><div></div></div>React</div>
+        <div class="badge reveal"><div class="mini"><div class="accent"></div><div></div><div></div><div class="accent"></div></div>Git / GitHub</div>
+        <div class="badge reveal"><div class="mini"><div></div><div></div><div></div><div></div></div>Figma</div>
+        <div class="badge reveal"><div class="mini"><div></div><div></div><div></div><div></div></div>簿記</div>
       </div>
     </section>
 
@@ -182,11 +182,11 @@
         <div class="bg-sq" style="top:92%; left:88%; width:18px; height:18px; opacity:.08; --r:8deg; animation-duration:8s;"></div>
         <div class="bg-sq accent" style="top:30%; left:96%; width:10px; height:10px; opacity:.14; --r:6deg; animation-duration:7.5s;"></div>
       </div>
-      <h2><span class="accent-line"></span>Timeline</h2>
+      <h2><span class="accent-marks"><span></span><span></span><span></span><span></span></span>Timeline</h2>
       <div class="career-timeline">
         <div class="ct-line"></div>
 
-        <div class="ct-item">
+        <div class="ct-item reveal">
           <div class="ct-avatar">LY</div>
           <div class="ct-role">
             <div class="ct-title">アプリケーション開発エンジニア<span class="ct-badge">Internship</span></div>
@@ -199,7 +199,7 @@
           </div>
         </div>
 
-        <div class="ct-item ct-company-node">
+        <div class="ct-item ct-company-node reveal">
           <div class="ct-avatar" style="color:#06C755;">LINE</div>
           <div class="ct-role">
             <div class="ct-title">LINE</div>
@@ -207,7 +207,7 @@
           </div>
         </div>
 
-        <div class="ct-item">
+        <div class="ct-item reveal">
           <div class="ct-avatar">S</div>
           <div class="ct-role">
             <div class="ct-title">アプリケーション開発エンジニア<span class="ct-badge">Internship</span></div>
@@ -220,7 +220,7 @@
           </div>
         </div>
 
-        <div class="ct-item ct-company-node">
+        <div class="ct-item ct-company-node reveal">
           <div class="ct-avatar" style="color:#2563eb;">eight</div>
           <div class="ct-role">
             <div class="ct-title">Eight</div>
@@ -228,7 +228,7 @@
           </div>
         </div>
 
-        <div class="ct-item">
+        <div class="ct-item reveal">
           <div class="ct-avatar" style="color:#7f1d2e;">中大</div>
           <div class="ct-role">
             <div class="ct-title">ビジネスデータサイエンス学科 入学</div>
@@ -248,45 +248,21 @@
         <div class="bg-sq" style="top:85%; left:95%; width:18px; height:18px; opacity:.08; --r:-11deg; animation-duration:8s;"></div>
         <div class="bg-sq accent" style="top:6%; left:90%; width:12px; height:12px; opacity:.15; --r:7deg; animation-duration:7.5s;"></div>
       </div>
-      <h2><span class="accent-line"></span>Articles</h2>
+      <h2><span class="accent-marks"><span></span><span></span><span></span><span></span></span>Articles</h2>
       <p class="articles-sub">noteに投稿した記事から、最新のものを自動で表示しています</p>
       <div id="articles-grid" class="articles-grid">
-        <a class="article-card" href="https://note.com/aoao_works/n/n9521833de6de" target="_blank" rel="noopener">
+        <a class="article-card reveal" href="https://note.com/aoao_works/n/n9521833de6de" target="_blank" rel="noopener">
           <div class="a-thumb"><img src="https://assets.st-note.com/production/uploads/images/272341020/rectangle_large_type_2_bca750aeb4c473bd0f23c3bbeb891383.png?width=800" alt="" loading="lazy"></div>
           <h3 class="a-title">内閣支持率「3%下落」は本当か?ニュースの数字を統計学で検証してみた</h3>
         </a>
-        <a class="article-card" href="https://note.com/aoao_works/n/n504597163bd7" target="_blank" rel="noopener">
+        <a class="article-card reveal" href="https://note.com/aoao_works/n/n504597163bd7" target="_blank" rel="noopener">
           <div class="a-thumb"><img src="https://assets.st-note.com/production/uploads/images/257491007/rectangle_large_type_2_815e397c2e4b8489e6c52dbe9c765f5d.png?width=800" alt="" loading="lazy"></div>
           <h3 class="a-title">PDFを冊子にするサイトを作ってみた</h3>
         </a>
-        <a class="article-card" href="https://note.com/aoao_works/n/n29608858b54f" target="_blank" rel="noopener">
+        <a class="article-card reveal" href="https://note.com/aoao_works/n/n29608858b54f" target="_blank" rel="noopener">
           <div class="a-thumb"><img src="https://assets.st-note.com/production/uploads/images/181612201/rectangle_large_type_2_c0513e4d3492be325431cf4dab906669.jpeg?width=800" alt="" loading="lazy"></div>
           <h3 class="a-title">【大学1年による】統計検定準1級に合格した話</h3>
         </a>
-      </div>
-    </section>
-
-    <section id="analytics">
-      <div class="bg-field">
-        <div class="bg-sq" style="top:8%; left:94%; width:16px; height:16px; opacity:.07; --r:11deg; animation-duration:7s;"></div>
-        <div class="bg-sq" style="top:90%; left:6%; width:14px; height:14px; opacity:.06; --r:-9deg; animation-duration:6.5s;"></div>
-        <div class="bg-sq accent" style="top:45%; left:2%; width:10px; height:10px; opacity:.14; --r:5deg; animation-duration:8s;"></div>
-      </div>
-      <h2><span class="accent-line"></span>Analytics</h2>
-      <div class="analytics-grid">
-        <div class="analytics-card">
-          <h3>GitHub Contributions</h3>
-          <div class="grass-container">
-            <img src="https://ghchart.rshah.org/004466/aoao-works" alt="GitHub Contributions">
-          </div>
-        </div>
-        
-        <div class="analytics-card">
-          <h3>Top Languages</h3>
-          <div class="stats-container">
-            <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=aoao-works&layout=compact&hide_border=true&title_color=004466" alt="Top Languages">
-          </div>
-        </div>
       </div>
     </section>
 
@@ -296,50 +272,23 @@
         <div class="bg-sq" style="top:92%; left:94%; width:18px; height:18px; opacity:.08; --r:-8deg; animation-duration:8s;"></div>
         <div class="bg-sq accent" style="top:50%; left:97%; width:12px; height:12px; opacity:.15; --r:9deg; animation-duration:7.5s;"></div>
       </div>
-      <h2><span class="accent-line"></span>Links & Contact</h2>
+      <h2><span class="accent-marks"><span></span><span></span><span></span><span></span></span>Links & Contact</h2>
       <div class="links-wrapper">
-        <a href="https://note.com/aoao_works" target="_blank" class="note-featured-card note">
-          <div class="card-icon">
+        <div class="logo-links">
+          <a href="https://note.com/aoao_works" target="_blank" class="logo-btn reveal note" aria-label="note" title="note">
             <img src="note-logo.png" alt="note" class="official-logo">
-          </div>
-          <div class="card-content">
-            <div class="note-label">note</div>
-            <h3>開発した作品の紹介や技術的な学びを発信中</h3>
-            <p>統計やアプリ開発などをブログ形式でまとめています。</p>
-            <span class="read-more">記事一覧を読む &rarr;</span>
-          </div>
-        </a>
-
-        <div class="social-grid">
-          <a href="https://github.com/aoao-works" target="_blank" class="social-btn github">
-            <div class="btn-icon"><i class="fa-brands fa-github"></i></div>
-            <div class="btn-text">
-              <span class="social-name">GitHub</span>
-              <span class="social-desc">@aoao-works</span>
-            </div>
           </a>
-          <a href="https://qiita.com/aoao_works" target="_blank" class="social-btn qiita">
-            <div class="btn-icon">
-              <img src="qiita-logo.png" alt="Qiita" class="official-logo">
-            </div>
-            <div class="btn-text">
-              <span class="social-name">Qiita</span>
-              <span class="social-desc">@aoao_works</span>
-            </div>
+          <a href="https://github.com/aoao-works" target="_blank" class="logo-btn reveal github" aria-label="GitHub" title="GitHub">
+            <i class="fa-brands fa-github"></i>
           </a>
-          <a href="https://x.com/aoao_works" target="_blank" class="social-btn x">
-            <div class="btn-icon"><i class="fa-brands fa-x-twitter"></i></div>
-            <div class="btn-text">
-              <span class="social-name">X</span>
-              <span class="social-desc">@aoao_works</span>
-            </div>
+          <a href="https://qiita.com/aoao_works" target="_blank" class="logo-btn reveal qiita" aria-label="Qiita" title="Qiita">
+            <img src="qiita-logo.png" alt="Qiita" class="official-logo">
           </a>
-          <a href="mailto:aoao.works@gmail.com" class="social-btn email">
-            <div class="btn-icon"><i class="fa-solid fa-envelope"></i></div>
-            <div class="btn-text">
-              <span class="social-name">Email</span>
-              <span class="social-desc">aoao.works@gmail.com</span>
-            </div>
+          <a href="https://x.com/aoao_works" target="_blank" class="logo-btn reveal x" aria-label="X" title="X">
+            <i class="fa-brands fa-x-twitter"></i>
+          </a>
+          <a href="mailto:aoao.works@gmail.com" class="logo-btn reveal email" aria-label="Email" title="Email">
+            <i class="fa-solid fa-envelope"></i>
           </a>
         </div>
       </div>

@@ -1,11 +1,41 @@
 document.addEventListener('DOMContentLoaded', () => {
-  initIntroAnimation();
   initWorkModals();
   loadArticles();
   initHeroParallax();
+  initScrollReveal();
+  initLogoBurst();
 });
 
-// スクロールに応じてヒーローのアイコンが下に移動しながらフェードアウトしていく演出
+// 見出し・カード・バッジなどをスクロールで画面に入ったタイミングでふわっと表示する
+function initScrollReveal() {
+  const targets = document.querySelectorAll('.reveal, h2, .bars-reveal');
+  if (targets.length === 0) return;
+
+  if (!('IntersectionObserver' in window)) {
+    targets.forEach(el => el.classList.add('is-visible'));
+    return;
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const el = entry.target;
+
+      if (el.classList.contains('reveal') && el.parentElement) {
+        const siblings = Array.from(el.parentElement.children).filter(c => c.classList.contains('reveal'));
+        const index = siblings.indexOf(el);
+        el.style.transitionDelay = `${Math.min(index, 8) * 0.08}s`;
+      }
+
+      el.classList.add('is-visible');
+      observer.unobserve(el);
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+
+  targets.forEach(el => observer.observe(el));
+}
+
+// スクロールに応じてヒーローのアイコンが下に移動していく演出(薄くはならない)
 function initHeroParallax() {
   const hero = document.getElementById('hero');
   const visual = document.querySelector('.hero-visual');
@@ -18,7 +48,6 @@ function initHeroParallax() {
   function update() {
     const progress = Math.min(window.scrollY / hero.offsetHeight, 1);
     visual.style.transform = `translateY(${progress * 160}px)`;
-    visual.style.opacity = String(1 - progress * 0.85);
     ticking = false;
   }
 
@@ -32,44 +61,41 @@ function initHeroParallax() {
   update();
 }
 
-function initIntroAnimation() {
-  const overlay = document.createElement('div');
-  overlay.id = 'intro-overlay';
-  document.body.appendChild(overlay);
+// ヒーローのロゴブロックをクリック(またはEnter/Space)すると、そのブロックだけがぷにっと弾けて消え、少し間を置いて元に戻る
+function initLogoBurst() {
+  const logo = document.getElementById('hero-logo');
+  if (!logo) return;
 
-  const logoContainer = document.createElement('div');
-  logoContainer.className = 'intro-logo-container';
-  overlay.appendChild(logoContainer);
+  const blocks = Array.from(logo.querySelectorAll('.hero-logo-block:not(.empty)'));
 
-  const pattern = [
-    [1, 1, 1],
-    [1, 1, 1],
-    [1, 1, 1],
-    [0, 1, 0]
-  ];
+  function burstBlock(block) {
+    if (block.classList.contains('popped') || block.classList.contains('popping-in')) return;
+    block.classList.add('popped');
+    setTimeout(() => {
+      block.classList.remove('popped');
+      block.classList.add('popping-in');
+      setTimeout(() => {
+        block.classList.remove('popping-in');
+      }, 500);
+    }, 1100);
+  }
 
-  pattern.forEach((row, rowIndex) => {
-    row.forEach((col, colIndex) => {
-      if (col === 1) {
-        const block = document.createElement('div');
-        block.className = 'intro-logo-block';
-        block.style.gridColumn = colIndex + 1;
-        block.style.gridRow = rowIndex + 1;
-        
-        const delay = (rowIndex * 0.1) + (colIndex * 0.05);
-        block.style.animationDelay = `${delay}s`;
-        logoContainer.appendChild(block);
+  logo.addEventListener('click', (e) => {
+    const block = e.target.closest('.hero-logo-block:not(.empty)');
+    if (block) burstBlock(block);
+  });
+
+  blocks.forEach((block) => {
+    block.setAttribute('tabindex', '0');
+    block.setAttribute('role', 'button');
+    block.setAttribute('aria-label', 'クリックすると弾けます');
+    block.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        burstBlock(block);
       }
     });
   });
-
-  setTimeout(() => {
-    overlay.classList.add('slide-out');
-    
-    setTimeout(() => {
-      overlay.remove();
-    }, 800);
-  }, 1000);
 }
 
 function initWorkModals() {
@@ -134,7 +160,7 @@ async function loadArticles() {
     grid.innerHTML = '';
     articles.slice(0, 3).forEach(article => {
       const card = document.createElement('a');
-      card.className = 'article-card';
+      card.className = 'article-card reveal';
       card.href = article.link;
       card.target = '_blank';
       card.rel = 'noopener';
@@ -148,6 +174,8 @@ async function loadArticles() {
 
       grid.appendChild(card);
     });
+    // articles.json から差し替えた新しいカードにも、スクロールで表示するアニメーションを効かせる
+    initScrollReveal();
   } catch (err) {
     // fetchに失敗しても、HTMLに書かれている静的な記事カードをそのまま残す
     console.warn('articles.json を取得できなかったため、静的な記事一覧を表示しています。', err);

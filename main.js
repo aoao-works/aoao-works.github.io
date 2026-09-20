@@ -42,6 +42,9 @@ function initHeroParallax() {
   if (!hero || !visual) return;
 
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  // スマホ版はロゴが本文の下に積み重なるレイアウトで余白が少なく、
+  // このぶんスライドさせるとヒーローの下端(overflow:hidden)で見切れてしまうため無効化する
+  if (window.matchMedia('(max-width: 768px)').matches) return;
 
   let ticking = false;
 

@@ -111,7 +111,7 @@ h2.is-visible .accent-marks span:nth-child(4) { transition-delay: .35s; }
 section > *:not(.bg-field) { position: relative; z-index: 1; }
 
 /* ロゴアニメーション */
-.hero-logo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; width: 240px; animation: float 6s ease-in-out infinite; will-change: transform; }
+.hero-logo-grid { display: grid; grid-template-columns: repeat(3, 1fr); --logo-size: 240px; width: var(--logo-size); gap: calc(var(--logo-size) / 15); animation: float 6s ease-in-out infinite; will-change: transform; }
 .hero-logo-block { width: 100%; aspect-ratio: 1; background-color: var(--navy); border-radius: 18%; transition: transform 0.3s ease; cursor: pointer; }
 .hero-logo-block:hover { transform: scale(1.05); }
 .hero-logo-block.empty { background-color: transparent; cursor: default; }
@@ -200,19 +200,18 @@ section > *:not(.bg-field) { position: relative; z-index: 1; }
 .data-mark { display: flex; align-items: flex-end; gap: 4px; height: 2.3rem; }
 .data-mark .u { width: 10px; border-radius: 22%; background-color: var(--navy); }
 .data-mark .u.accent { background-color: var(--accent-color); }
-.badges { display: flex; flex-wrap: wrap; gap: 0.9rem; }
-.badge { display: flex; align-items: center; gap: 0.6rem; padding: 0.75rem 1.2rem; background-color: var(--card-bg); border: 1px solid var(--border-color); border-radius: 999px; font-size: 0.95rem; font-weight: 500; transition: all 0.25s ease; }
-.badge:hover { border-color: var(--navy); transform: translateY(-2px); box-shadow: 0 8px 16px rgba(0, 68, 102, 0.1); }
-.mini { display: grid; grid-template-columns: repeat(2, 7px); grid-template-rows: repeat(2, 7px); gap: 3px; }
-.mini div { border-radius: 25%; background-color: var(--navy); }
-.mini div.accent { background-color: var(--accent-color); }
+.badges { display: flex; flex-wrap: wrap; align-items: center; gap: 1.6rem; }
+.badge { display: flex; align-items: center; justify-content: center; }
+.badge-logo { width: 42px; height: 42px; object-fit: contain; flex-shrink: 0; }
 
 /* Timelineセクション(経歴カード) */
 .career-timeline { position: relative; padding-left: 0.4rem; }
-.ct-line { position: absolute; left: 27px; top: 6px; bottom: 6px; width: 2px; background: repeating-linear-gradient(to bottom, var(--border-color) 0, var(--border-color) 4px, transparent 4px, transparent 10px); }
+.ct-line { position: absolute; left: calc(0.4rem + 26px); top: 6px; bottom: 6px; width: 4px; background-image: radial-gradient(circle, var(--border-color) 1.7px, transparent 1.8px); background-size: 4px 10px; background-repeat: repeat-y; }
 .ct-item { position: relative; display: flex; gap: 1.6rem; padding-bottom: 2rem; }
 .ct-item:last-child { padding-bottom: 0; }
-.ct-avatar { flex-shrink: 0; width: 56px; height: 56px; border-radius: 50%; background-color: #fff; border: 1px solid var(--border-color); display: flex; align-items: center; justify-content: center; z-index: 1; font-weight: 700; font-size: 0.9rem; color: var(--text-color); }
+.ct-avatar { flex-shrink: 0; width: 56px; height: 56px; border-radius: 50%; background-color: #fff; border: 1px solid var(--border-color); display: flex; align-items: center; justify-content: center; z-index: 1; font-weight: 700; font-size: 0.9rem; color: var(--text-color); overflow: hidden; }
+.ct-logo { width: 62%; height: 62%; object-fit: contain; }
+.ct-logo-wide { width: 82%; }
 .ct-role { padding-top: 0.25rem; }
 .ct-title { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.25rem; }
 .ct-badge { display: inline-flex; align-items: center; padding: 0.15rem 0.6rem; border-radius: 999px; font-size: 0.7rem; font-weight: 700; margin-left: 0.6rem; background-color: #eef2ff; color: #4338ca; }
@@ -220,6 +219,14 @@ section > *:not(.bg-field) { position: relative; z-index: 1; }
 .ct-meta { display: flex; gap: 1.1rem; margin-bottom: 0.6rem; flex-wrap: wrap; }
 .ct-meta span { display: flex; align-items: center; gap: 0.4rem; font-size: 0.8rem; color: var(--text-muted); }
 .ct-desc { font-size: 0.9rem; color: var(--text-muted); line-height: 1.75; max-width: 620px; }
+
+/* Qualificationsセクション(資格・学業成績を箇条書きで) */
+.quals-list { list-style: none; }
+.quals-list li { position: relative; padding-left: 1.6rem; margin-bottom: 1.1rem; font-size: 1.05rem; color: var(--text-color); line-height: 1.6; }
+.quals-list li::before { content: ''; position: absolute; left: 0; top: 0.65em; width: 8px; height: 8px; border-radius: 22%; background-color: var(--navy); }
+.quals-list li:last-child { margin-bottom: 0; }
+.quals-date { font-family: monospace; color: var(--text-muted); font-size: 0.9rem; margin-right: 0.7rem; }
+.quals-highlight { font-weight: 800; font-size: 1.2rem; margin-left: 0.3rem; }
 .ct-company-node .ct-title { font-size: 1rem; }
 .ct-company-node .ct-desc { font-size: 0.85rem; }
 
@@ -249,7 +256,7 @@ section > *:not(.bg-field) { position: relative; z-index: 1; }
   .hero-lead { margin-left: auto; margin-right: auto; }
   .hero-cta-row { justify-content: center; }
   .hero-visual { justify-content: center; }
-  .hero-logo-grid { width: 160px; }
+  .hero-logo-grid { --logo-size: 160px; }
   .about-container { padding: 2rem 1.5rem; }
   .profile-header { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
   .philosophy-quote .quote-main { font-size: 1.7rem; }
@@ -257,7 +264,7 @@ section > *:not(.bg-field) { position: relative; z-index: 1; }
   .career-timeline { padding-left: 0; }
   .ct-item { gap: 1rem; }
   .ct-avatar { width: 44px; height: 44px; font-size: 0.75rem; }
-  .ct-line { left: 21px; }
+  .ct-line { left: 20px; }
   .logo-btn { width: 60px; height: 60px; font-size: 1.5rem; }
   .modal-actions { flex-direction: column; }
 }

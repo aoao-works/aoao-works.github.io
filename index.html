@@ -27,7 +27,7 @@
 
 <body>
   <header>
-    <div class="logo-text">aoao works</div>
+    <a href="#" class="logo-text" aria-label="トップへ戻る">aoao works</a>
     <nav>
       <a href="#about">About</a>
       <a href="#works">Works</a>
@@ -35,9 +35,16 @@
       <a href="#timeline">Timeline</a>
       <a href="#qualifications">Qualifications</a>
       <a href="#articles">Articles</a>
-      <a href="#links">Links</a>
     </nav>
   </header>
+
+  <aside class="side-links" aria-label="Links">
+    <a href="https://note.com/aoao_works" target="_blank" rel="noopener" class="sl" aria-label="note" title="note"><img class="sl-icon" src="logos/si-note.svg" alt=""></a>
+    <a href="https://github.com/aoao-works" target="_blank" rel="noopener" class="sl" aria-label="GitHub" title="GitHub"><img class="sl-icon" src="logos/si-github.svg" alt=""></a>
+    <a href="https://qiita.com/aoao_works" target="_blank" rel="noopener" class="sl" aria-label="Qiita" title="Qiita"><img class="sl-icon" src="logos/si-qiita.svg" alt=""></a>
+    <a href="https://x.com/aoao_works" target="_blank" rel="noopener" class="sl" aria-label="X" title="X"><img class="sl-icon" src="logos/si-x.svg" alt=""></a>
+    <a href="mailto:aoao.works@gmail.com" class="sl" aria-label="Email" title="Email"><img class="sl-icon" src="logos/si-gmail.svg" alt=""></a>
+  </aside>
 
   <main>
     <section id="hero">
@@ -89,29 +96,16 @@
         <div class="bg-sq accent" style="top:12%; left:48%; width:14px; height:14px; opacity:.18;"></div>
         <div class="bg-sq accent" style="top:80%; left:58%; width:12px; height:12px; opacity:.16;"></div>
       </div>
-      <h2><span class="accent-marks"><span></span><span></span><span></span><span></span></span>About &amp; Philosophy</h2>
-      <div class="philosophy-quote reveal">
-        <p class="quote-main">「行動<span class="hl">あるのみ</span>」</p>
-        <div class="mini-divider"><div></div><div></div><div></div><div></div><div></div></div>
-      </div>
-      <div class="about-container reveal">
-        <div class="profile-header">
-          <h3>aoao works</h3>
-          <span class="brand-tag">Data Science / Developer</span>
+      <h2><span class="accent-marks"><span></span><span></span><span></span><span></span></span>About</h2>
+      <div class="about-simple reveal">
+        <div class="about-body">
+        <p class="about-quote">行動<span class="hl">あるのみ</span>。</p>
+        <div class="about-text">
+          <p>データサイエンスとエンジニアリングを学ぶ大学生。<br>課題を見つけて、まず手を動かして形にする。</p>
+          <p>アプリ開発と統計学を軸に、データに基づくものづくりを続けています。<br>目指すのは、グローバルな環境でのデータサイエンスの研究開発。</p>
         </div>
-        <div class="profile-body">
-          <p>
-            データサイエンスとエンジニアリングを専攻する大学生「aoao works」<br>
-            pdf-bookletや大学生活サポートアプリ「Chuinfo」、ディベート特化型SNS「debight」など、課題解決に向けたアプリケーションの開発を行っている。これまでの開発経験を通じて、ユーザーのニーズを捉えたプロダクト設計と実装に注力してきた。
-          </p>
-          <p>
-            現在はデータ解析の基盤を固めるため、統計検定1級の取得に向けて統計学を学習中。アプリ開発に限らず、簿記の知識を活かしたデータ分析や音楽制作など、多様な領域にアプローチしている。
-          </p>
-          <p class="vision-text">
-            <strong>Future Goal:</strong><br>
-            グローバルな環境でデータサイエンスの研究開発に挑むこと。
-          </p>
         </div>
+        <img class="about-photo" src="images/profile.jpg" alt="サンフランシスコのゴールデンゲートブリッジ前で撮影した写真" loading="lazy">
       </div>
     </section>
 
@@ -271,34 +265,6 @@
           <div class="a-thumb"><img src="https://assets.st-note.com/production/uploads/images/181612201/rectangle_large_type_2_c0513e4d3492be325431cf4dab906669.jpeg?width=800" alt="" loading="lazy"></div>
           <h3 class="a-title">【大学1年による】統計検定準1級に合格した話</h3>
         </a>
-      </div>
-    </section>
-
-    <section id="links">
-      <div class="bg-field">
-        <div class="bg-sq" style="top:6%; left:6%; width:16px; height:16px; opacity:.07; --r:10deg; animation-duration:7s;"></div>
-        <div class="bg-sq" style="top:92%; left:94%; width:18px; height:18px; opacity:.08; --r:-8deg; animation-duration:8s;"></div>
-        <div class="bg-sq accent" style="top:50%; left:97%; width:12px; height:12px; opacity:.15; --r:9deg; animation-duration:7.5s;"></div>
-      </div>
-      <h2><span class="accent-marks"><span></span><span></span><span></span><span></span></span>Links & Contact</h2>
-      <div class="links-wrapper">
-        <div class="logo-links">
-          <a href="https://note.com/aoao_works" target="_blank" class="logo-btn reveal note" aria-label="note" title="note">
-            <img src="logos/note-logo.png" alt="note" class="official-logo">
-          </a>
-          <a href="https://github.com/aoao-works" target="_blank" class="logo-btn reveal github" aria-label="GitHub" title="GitHub">
-            <i class="fa-brands fa-github"></i>
-          </a>
-          <a href="https://qiita.com/aoao_works" target="_blank" class="logo-btn reveal qiita" aria-label="Qiita" title="Qiita">
-            <img src="logos/qiita-logo.png" alt="Qiita" class="official-logo">
-          </a>
-          <a href="https://x.com/aoao_works" target="_blank" class="logo-btn reveal x" aria-label="X" title="X">
-            <i class="fa-brands fa-x-twitter"></i>
-          </a>
-          <a href="mailto:aoao.works@gmail.com" class="logo-btn reveal email" aria-label="Email" title="Email">
-            <i class="fa-solid fa-envelope"></i>
-          </a>
-        </div>
       </div>
     </section>
   </main>

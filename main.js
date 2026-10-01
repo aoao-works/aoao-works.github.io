@@ -17,16 +17,15 @@ function initScrollReveal() {
   }
 
   const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (!entry.isIntersecting) return;
+    // 同時に画面へ入った要素を上から順に、間隔を空けて1つずつ表示する(Skillsのロゴなど数が多くても最後まで順に出る)
+    let order = 0;
+    entries.filter(e => e.isIntersecting).forEach(entry => {
       const el = entry.target;
-
-      if (el.classList.contains('reveal') && el.parentElement) {
-        const siblings = Array.from(el.parentElement.children).filter(c => c.classList.contains('reveal'));
-        const index = siblings.indexOf(el);
-        el.style.transitionDelay = `${Math.min(index, 8) * 0.08}s`;
+      if (el.classList.contains('reveal')) {
+        el.style.transitionDelay = `${order++ * 0.09}s`;
+        // 表示後もディレイが残るとホバー時の反応が遅れるので、アニメーション完了後に戻す
+        setTimeout(() => { el.style.transitionDelay = ''; }, 1000 + order * 90);
       }
-
       el.classList.add('is-visible');
       observer.unobserve(el);
     });

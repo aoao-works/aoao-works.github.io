@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initHeroParallax();
   initScrollReveal();
   initLogoBurst();
+  initSideLinks();
 });
 
 // 見出し・カード・バッジなどをスクロールで画面に入ったタイミングでふわっと表示する
@@ -182,4 +183,19 @@ async function loadArticles() {
     // fetchに失敗しても、HTMLに書かれている静的な記事カードをそのまま残す
     console.warn('articles.json を取得できなかったため、静的な記事一覧を表示しています。', err);
   }
+}
+// トップ画面(ヒーロー)を見せている間はサイドのリンクを隠し、その下へスクロールしたら表示する
+function initSideLinks() {
+  const links = document.querySelector('.side-links');
+  const hero = document.getElementById('hero');
+  if (!links || !hero) return;
+
+  if (!('IntersectionObserver' in window)) {
+    links.classList.remove('is-hidden');
+    return;
+  }
+
+  new IntersectionObserver(([entry]) => {
+    links.classList.toggle('is-hidden', entry.intersectionRatio > 0.5);
+  }, { threshold: [0, 0.25, 0.5, 0.75, 1] }).observe(hero);
 }
